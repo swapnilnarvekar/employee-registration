@@ -14,7 +14,7 @@ public class EmployeeRegistrationController {
     @RequestMapping(value = "/test",method = RequestMethod.GET)
     String testRequestMapping() {
         System.out.println("Checking Test RequestMapping - " + "Successful");
-        return "Checking Test RequestMapping - " + "Successful ";
+        return "Checking Test RequestMapping - " + "Successful on Azure web app service";
     }
 
     @RequestMapping(value = "/register",method = RequestMethod.GET)
