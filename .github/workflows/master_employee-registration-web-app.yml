@@ -62,5 +62,5 @@ jobs:
         with:
           app-name: 'employee-registration-web-app'
           slot-name: 'Production'
-          package: 'target/*.jar'
+          package: '*.jar'
           
