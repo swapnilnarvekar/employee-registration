@@ -1,19 +1,16 @@
 name: build employee-registration
-
 on:
   push:
-    branches: [ master ]
+    branches:
+      - master
   pull_request:
-    branches: [ master ]
-
+    branches:
+      - master
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Get code
-      uses: actions/checkout@v4
-      - name: create and push docker image
-      run: |
-        echo "${{ secrets.DOCKER_PWD }}" | docker login -u "narvekarswapnil" --password-stdin
-        docker image build -t narvekarswapnil/test-repository:latest-tag .
-        docker push narvekarswapnil/test-repository:latest-tag
+        uses: actions/checkout@v4
+      - name: Maven build
+        uses: mvn clean install
