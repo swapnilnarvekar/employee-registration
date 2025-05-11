@@ -15,3 +15,5 @@ jobs:
         env:
           MESSAGE: Hello world message
         run: echo $MESSAGE
+      - name: Print a docker credentials
+        run: echo ${{ secrets.DOCKER_PWD }}
