@@ -1,0 +1,27 @@
+name: build employee-registration
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Java version
+          uses: actions/setup-java@v4
+          with:
+            java-version: '11'
+
+      - name: Build with Maven
+          run: mvn clean install
+
+      - name: create and push docker image
+          run: |
+            echo "${{ secrets.DOCKER_PWD }}" | docker login -u "narvekarswapnil" --password-stdin
+            docker image build -t narvekarswapnil/test-repository:latest-tag .
+            docker push narvekarswapnil/test-repository:latest-tag
