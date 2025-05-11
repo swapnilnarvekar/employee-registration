@@ -9,3 +9,9 @@ on:
 jobs:
   build:
     name: build employee-registration-module
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print a message
+        env:
+          MESSAGE: Hello world message
+        run: echo $MESSAGE
