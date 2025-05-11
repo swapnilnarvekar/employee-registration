@@ -21,3 +21,8 @@ jobs:
         run: mvn clean install
       - name: build docker image
         run: docker build -t employee-registration:20250511 .
+      - name: push docker image
+        run: |
+          echo "${{ secrets.DOCKER_PWD }}" | docker login -u "narvekarswapnil" --password-stdin
+          docker build -t employee-registration:20250511 .
+          docker push narvekarswapnil/test-repository:20250511
