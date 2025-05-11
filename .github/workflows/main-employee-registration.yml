@@ -15,5 +15,5 @@ jobs:
         env:
           MESSAGE: Hello world message
         run: echo $MESSAGE
-      - name: build employee-registration
-        run: mvn clean install
+      - name: check-out the code
+        uses: actions/checkout@v4
