@@ -11,10 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Build with Maven
-          run: mvn clean install
-
       - name: create and push docker image
           run: |
             echo "${{ secrets.DOCKER_PWD }}" | docker login -u "narvekarswapnil" --password-stdin
