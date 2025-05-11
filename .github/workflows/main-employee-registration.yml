@@ -20,7 +20,7 @@ jobs:
       - name: build the project
         run: mvn clean install
       - name: push docker image to ACR
-        run:|
+        run: |
           echo "${{ secrets.NARYA_ACR_REGISTRY}}" | docker login -u naryaAcrRegistry -p "${{ secrets.NARYA_ACR_REGISTRY}}" naryaacrregistry.azurecr.io
           docker build -t employee-registration:20250511 .
           docker tag employee-registration:20250511 naryaacrregistry.azurecr.io/employee-registration:20250511
