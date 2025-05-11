@@ -10,9 +10,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Get code
+      uses: actions/checkout@v4
       - name: create and push docker image
-          run: |
-            echo "${{ secrets.DOCKER_PWD }}" | docker login -u "narvekarswapnil" --password-stdin
-            docker image build -t narvekarswapnil/test-repository:latest-tag .
-            docker push narvekarswapnil/test-repository:latest-tag
+      run: |
+        echo "${{ secrets.DOCKER_PWD }}" | docker login -u "narvekarswapnil" --password-stdin
+        docker image build -t narvekarswapnil/test-repository:latest-tag .
+        docker push narvekarswapnil/test-repository:latest-tag
