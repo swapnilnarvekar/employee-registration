@@ -18,7 +18,7 @@ jobs:
       - name: check-out the code
         uses: actions/checkout@v4
       - name: build the project
-        run: mvn clean install
+        run: mvn package spring-boot:repackage
       - name: push docker image to ACR
         run: |
           echo "${{ secrets.NARYA_ACR_REGISTRY}}" | docker login -u naryaAcrRegistry -p "${{ secrets.NARYA_ACR_REGISTRY}}" naryaacrregistry.azurecr.io
