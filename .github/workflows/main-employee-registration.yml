@@ -29,4 +29,4 @@ jobs:
           docker push narvekarswapnil/employee-registration:20250511
       - name: Login to Azure ACR
         run: |
-          echo "${{ secrets.NARYA_ACR_REGISTRY}}" | docker login -u "naryaacrregistry.azurecr.io" --password-stdin
+          echo "${{ secrets.NARYA_ACR_REGISTRY}}" | docker login -u naryaAcrRegistry -p "TJ8KbknHjfcuKk++R1Wx4UWkDoSOllQfPN/NtXCmzL+ACRBvPPYQ" naryaacrregistry.azurecr.io
