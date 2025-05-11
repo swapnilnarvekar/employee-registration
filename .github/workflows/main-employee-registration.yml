@@ -8,9 +8,4 @@ on:
       - master
 jobs:
   build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Get code
-        uses: actions/checkout@v4
-      - name: Maven build
-        uses: mvn clean install
+    name: build employee-registration-module
