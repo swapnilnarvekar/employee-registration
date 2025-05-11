@@ -25,4 +25,4 @@ jobs:
         run: |
           echo "${{ secrets.DOCKER_PWD }}" | docker login -u "narvekarswapnil" --password-stdin
           docker build -t employee-registration:20250511 .
-          docker image push --all-tags narvekarswapnil/test-repository
+          docker push narvekarswapnil/employee-registration:20250511
